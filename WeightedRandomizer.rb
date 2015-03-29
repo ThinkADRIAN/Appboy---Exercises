@@ -5,10 +5,12 @@
 =end
 
 def weightedRandomizer ( weighted_input_array )
-	labels = []
+
+  # Initializers
+  labels = []
   random_label = ""
 
-  # Load Labels into array
+  # Load Labels into array times the weight
   weighted_input_array.each do |element|
     element.each do |y|
       counter = element[1]
@@ -24,8 +26,11 @@ def weightedRandomizer ( weighted_input_array )
 end
 
 def testWeightedRandomizer ( input, number_of_runs )
+  
+  #Intializer
   label_counter = {}
 
+  # Iterate through input and increment counters
   for run_counter in 1..number_of_runs do
     key = weightedRandomizer(input)
     if label_counter[key].nil?
