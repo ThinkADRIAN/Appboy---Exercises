@@ -1,4 +1,10 @@
-def randomMarblePicker ( weighted_input_array )
+=begin
+
+  Weighted Randomizer is a situation you have a group of items with corresponding weights, and you want to randomly select an item with its associated weight taken into account.
+
+=end
+
+def weightedRandomizer ( weighted_input_array )
 	labels = []
   random_label = ""
 
@@ -17,11 +23,11 @@ def randomMarblePicker ( weighted_input_array )
 
 end
 
-def testMarblePicker ( input, number_of_runs )
+def testWeightedRandomizer ( input, number_of_runs )
   label_counter = {}
 
   for run_counter in 1..number_of_runs do
-    key = randomMarblePicker(input)
+    key = weightedRandomizer(input)
     if label_counter[key].nil?
       label_counter[key] = 1
     else
@@ -35,4 +41,4 @@ end
 
 input = [ ["red", 10], ["green", 30], ["blue", 20] ]
 
-testMarblePicker(input,10000)
+testWeightedRandomizer(input,10000)
